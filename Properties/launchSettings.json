@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "ASoftware Client (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "ASoftware Client (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
