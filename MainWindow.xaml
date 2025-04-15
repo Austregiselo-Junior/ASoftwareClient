@@ -5,10 +5,72 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:ASoftware_Client"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:controls="using:ASoftware.Controls"
     mc:Ignorable="d">
 
-    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-        <Button x:Name="myButton" Click="myButton_Click">Click Me</Button>
-    </StackPanel>
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <controls:HeaderControl Grid.ColumnSpan="3" />
+
+        <Button
+        Grid.Row="1"
+        Grid.Column="3"
+        Margin="0,20,20,0"
+        HorizontalAlignment="Right"
+        VerticalAlignment="Top"
+        Click="AdicionarCliente_Click"
+        Content="Adicionar Novo Paciente" />
+
+        <NavigationView
+        Background="{ThemeResource PivotNavButtonPressedBackgroundThemeBrush}"
+        x:Name="nvSample"
+        Grid.Row="1"
+        AlwaysShowHeader="False"
+        ExpandedModeThresholdWidth="500"
+        IsBackButtonVisible="Collapsed"
+        IsBackEnabled="False"
+        IsPaneToggleButtonVisible="False"
+        IsSettingsVisible="True"
+        IsTabStop="False"
+        PaneDisplayMode="Left"
+        SelectionChanged="NavigationView_SelectionChanged"
+        SelectionFollowsFocus="Disabled">
+
+            <NavigationView.MenuItems>
+                <NavigationViewItem
+                x:Name="Pacientes"
+                Content="Pacientes"
+                Tag="Pacientes" />
+
+                <NavigationViewItem
+                x:Name="PacientesPorSessao"
+                Content="Pacientes por Sessão"
+                Tag="PacientesPorSessao" />
+
+                <NavigationViewItem
+                x:Name="PacientesMensais"
+                Content="Pacientes Mensais"
+                Tag="PacientesMensais" />
+            </NavigationView.MenuItems>
+
+            <NavigationView.AutoSuggestBox>
+                <AutoSuggestBox AutomationProperties.Name="Search" QueryIcon="Find" />
+            </NavigationView.AutoSuggestBox>
+
+            <Frame x:Name="contentFrame" />
+        </NavigationView>
+
+        <controls:FooterControl Grid.Row="2" Grid.ColumnSpan="3" />
+    </Grid>
 </Window>
