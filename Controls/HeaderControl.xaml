@@ -16,7 +16,7 @@
             <FontIcon
                 Margin="5,5,5,0"
                 FontSize="45"
-                Glyph="&#xEC32;" />
+                Glyph="&#xe7fc;" />
             <TextBlock
                 VerticalAlignment="Center"
                 FontSize="30"

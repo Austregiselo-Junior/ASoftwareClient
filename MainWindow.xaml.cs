@@ -1,4 +1,6 @@
+using ASoftware_Client.Views;
 using Microsoft.UI.Xaml;
+using Microsoft.UI.Xaml.Controls;
 
 namespace ASoftware_Client
 {
@@ -9,12 +11,33 @@ namespace ASoftware_Client
             this.InitializeComponent();
         }
 
-        private void NavigationView_SelectionChanged(Microsoft.UI.Xaml.Controls.NavigationView sender, Microsoft.UI.Xaml.Controls.NavigationViewSelectionChangedEventArgs args)
+        private void AdicionarCliente_Click(object sender, RoutedEventArgs e)
         {
         }
 
-        private void AdicionarCliente_Click(object sender, RoutedEventArgs e)
+        private void NavigationView_ItemInvoked(Microsoft.UI.Xaml.Controls.NavigationView sender, Microsoft.UI.Xaml.Controls.NavigationViewItemInvokedEventArgs args)
         {
+            if (args.InvokedItemContainer is NavigationViewItem item)
+            {
+                switch (item.Tag)
+                {
+                    case "Patients":
+                        contentFrame.Navigate(typeof(Patients));
+                        break;
+
+                    case "PatientsbySession":
+                        contentFrame.Navigate(typeof(PatientsbySession));
+                        break;
+
+                    case "PatientsbyMonth":
+                        contentFrame.Navigate(typeof(PatientsbyMonth));
+                        break;
+
+                    case "Settings":
+                        contentFrame.Navigate(typeof(Settings));
+                        break;
+                }
+            }
         }
     }
 }

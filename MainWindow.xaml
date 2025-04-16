@@ -34,7 +34,6 @@
 
         <NavigationView
         Background="{ThemeResource PivotNavButtonPressedBackgroundThemeBrush}"
-        x:Name="nvSample"
         Grid.Row="1"
         AlwaysShowHeader="False"
         ExpandedModeThresholdWidth="500"
@@ -44,24 +43,24 @@
         IsSettingsVisible="True"
         IsTabStop="False"
         PaneDisplayMode="Left"
-        SelectionChanged="NavigationView_SelectionChanged"
+        ItemInvoked="NavigationView_ItemInvoked"
         SelectionFollowsFocus="Disabled">
 
             <NavigationView.MenuItems>
                 <NavigationViewItem
-                x:Name="Pacientes"
-                Content="Pacientes"
-                Tag="Pacientes" />
+                x:Name="Patients"
+                Content="Patients"
+                Tag="Patients" />
 
                 <NavigationViewItem
-                x:Name="PacientesPorSessao"
-                Content="Pacientes por Sessão"
-                Tag="PacientesPorSessao" />
+                x:Name="PatientsbySession"
+                Content="PatientsbySession"
+                Tag="PatientsbySession" />
 
                 <NavigationViewItem
-                x:Name="PacientesMensais"
-                Content="Pacientes Mensais"
-                Tag="PacientesMensais" />
+                x:Name="PatientsbyMonth"
+                Content="PatientsbyMonth"
+                Tag="PatientsbyMonth" />
             </NavigationView.MenuItems>
 
             <NavigationView.AutoSuggestBox>
