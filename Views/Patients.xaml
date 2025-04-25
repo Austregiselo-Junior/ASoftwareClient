@@ -6,10 +6,108 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="using:ASoftware_Client.Views"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModel="using:ASoftware_Client.ViewModel"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
     mc:Ignorable="d">
 
-    <Grid Padding="20">
-        <TextBlock FontSize="24" Text="Patients" />
+    <Page.Resources>
+        <ResourceDictionary>
+            <ItemsPanelTemplate x:Key="PanelItensTemplate">
+                <ItemsStackPanel Orientation="Vertical" />
+            </ItemsPanelTemplate>
+
+            <DataTemplate x:Key="PatientsDataTemplate" x:DataType="viewModel:PatientsViewModel">
+                <RelativePanel>
+
+                    <TextBlock
+                        x:Name="Patients"
+                        Margin="0,0,65,0"
+                        Text="Teste" />
+                    <TextBlock
+                        x:Name="Cells"
+                        Margin="0,0,65,0"
+                        RelativePanel.RightOf="Patients"
+                        Text="Teste" />
+                    <TextBlock
+                        x:Name="DateOfConsults"
+                        Margin="0,0,95,0"
+                        RelativePanel.RightOf="Cells"
+                        Text="Teste" />
+
+                    <Button
+                        x:Name="AddPatient"
+                        Margin="0,0,10,0"
+                        Background="Green"
+                        Click="AdicionarCliente_Click"
+                        Content="Adicionar Novo Paciente"
+                        RelativePanel.AlignHorizontalCenterWithPanel="True"
+                        RelativePanel.RightOf="DateOfConsults" />
+                    <Button
+                        x:Name="EditPatient"
+                        Margin="0,0,10,0"
+                        Background="Yellow"
+                        Click="EditCliente_Click"
+                        Content="Editar Paciente"
+                        RelativePanel.RightOf="AddPatient" />
+                    <Button
+                        x:Name="DeletePatient"
+                        Margin="0,0,10,10"
+                        Background="Red"
+                        Click="DeleteCliente_Click"
+                        Content="Excluir Paciente"
+                        RelativePanel.RightOf="EditPatient" />
+                </RelativePanel>
+            </DataTemplate>
+        </ResourceDictionary>
+    </Page.Resources>
+
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <TextBlock FontSize="24" Text="Pacientes" />
+
+        <RelativePanel
+            x:Name="GridTitle"
+            Grid.Row="1"
+            Margin="15,30,0,10">
+            <TextBlock
+                x:Name="Paciente"
+                Margin="0,30,40,0"
+                FontWeight="Bold"
+                Text="Paciente" />
+            <TextBlock
+                x:Name="Telefone"
+                Margin="0,30,40,0"
+                FontWeight="Bold"
+                RelativePanel.RightOf="Paciente"
+                Text="Telefone" />
+            <TextBlock
+                x:Name="DataConsulta"
+                Margin="0,30,40,0"
+                FontWeight="Bold"
+                RelativePanel.RightOf="Telefone"
+                Text="Data Consulta" />
+            <TextBlock
+                x:Name="Acoes"
+                Margin="0,30,40,0"
+                FontWeight="Bold"
+                RelativePanel.RightOf="DataConsulta"
+                Text="Ações" />
+        </RelativePanel>
+
+        <ListView
+            Grid.Row="2"
+            MinHeight="150"
+            MaxHeight="250"
+            HorizontalAlignment="Stretch"
+            ItemTemplate="{StaticResource PatientsDataTemplate}"
+            ItemsPanel="{StaticResource PanelItensTemplate}"
+            ItemsSource="{x:Bind ViewModel.Patients}"
+            ScrollViewer.HorizontalScrollBarVisibility="Auto"
+            ScrollViewer.HorizontalScrollMode="Enabled" />
     </Grid>
 </Page>

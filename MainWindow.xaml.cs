@@ -11,10 +11,6 @@ namespace ASoftware_Client
             this.InitializeComponent();
         }
 
-        private void AdicionarCliente_Click(object sender, RoutedEventArgs e)
-        {
-        }
-
         private void NavigationView_ItemInvoked(Microsoft.UI.Xaml.Controls.NavigationView sender, Microsoft.UI.Xaml.Controls.NavigationViewItemInvokedEventArgs args)
         {
             if (args.InvokedItemContainer is NavigationViewItem item)
