@@ -17,20 +17,23 @@
             </ItemsPanelTemplate>
 
             <DataTemplate x:Key="PatientsDataTemplate" x:DataType="viewModel:PatientsViewModel">
-                <RelativePanel>
+                <RelativePanel RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True">
 
                     <TextBlock
                         x:Name="Patients"
-                        Margin="0,0,65,0"
+                        Margin="0,5,65,0"
+                        IsTapEnabled="False"
                         Text="Teste" />
                     <TextBlock
                         x:Name="Cells"
-                        Margin="0,0,65,0"
+                        Margin="0,5,65,0"
+                        IsTapEnabled="False"
                         RelativePanel.RightOf="Patients"
                         Text="Teste" />
                     <TextBlock
                         x:Name="DateOfConsults"
-                        Margin="0,0,95,0"
+                        Margin="0,5,95,0"
+                        IsTapEnabled="False"
                         RelativePanel.RightOf="Cells"
                         Text="Teste" />
 
@@ -40,7 +43,6 @@
                         Background="Green"
                         Click="AdicionarCliente_Click"
                         Content="Adicionar Novo Paciente"
-                        RelativePanel.AlignHorizontalCenterWithPanel="True"
                         RelativePanel.RightOf="DateOfConsults" />
                     <Button
                         x:Name="EditPatient"
@@ -51,7 +53,7 @@
                         RelativePanel.RightOf="AddPatient" />
                     <Button
                         x:Name="DeletePatient"
-                        Margin="0,0,10,10"
+                        Margin="0,0,10,0"
                         Background="Red"
                         Click="DeleteCliente_Click"
                         Content="Excluir Paciente"
@@ -101,9 +103,14 @@
 
         <ListView
             Grid.Row="2"
-            MinHeight="150"
+            MinWidth="250"
+            MinHeight="550"
+            MaxWidth="1000"
             MaxHeight="250"
-            HorizontalAlignment="Stretch"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Stretch"
+            IsItemClickEnabled="False"
+            IsTapEnabled="False"
             ItemTemplate="{StaticResource PatientsDataTemplate}"
             ItemsPanel="{StaticResource PanelItensTemplate}"
             ItemsSource="{x:Bind ViewModel.Patients}"
