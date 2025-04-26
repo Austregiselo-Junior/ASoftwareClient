@@ -18,15 +18,15 @@ namespace ASoftware_Client
                 switch (item.Tag)
                 {
                     case "Patients":
-                        contentFrame.Navigate(typeof(Patients));
+                        contentFrame.Navigate(typeof(Client));
                         break;
 
                     case "PatientsbySession":
-                        contentFrame.Navigate(typeof(PatientsbySession));
+                        contentFrame.Navigate(typeof(ClientbySession));
                         break;
 
                     case "PatientsbyMonth":
-                        contentFrame.Navigate(typeof(PatientsbyMonth));
+                        contentFrame.Navigate(typeof(ClientbyMonth));
                         break;
 
                     case "Settings":

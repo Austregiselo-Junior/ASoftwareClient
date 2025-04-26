@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
@@ -13,9 +13,9 @@
     <EnableMsixTooling>true</EnableMsixTooling>
   </PropertyGroup>
   <ItemGroup>
-    <None Remove="Views\Patients.xaml" />
-    <None Remove="Views\PatientsbyMonth.xaml" />
-    <None Remove="Views\PatientsbySession.xaml" />
+    <None Remove="Views\Client.xaml" />
+    <None Remove="Views\ClientbyMonth.xaml" />
+    <None Remove="Views\ClientbySession.xaml" />
     <None Remove="Views\Settings.xaml" />
   </ItemGroup>
 
@@ -49,17 +49,17 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="Views\PatientsbyMonth.xaml">
+    <Page Update="Views\ClientbyMonth.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="Views\PatientsbySession.xaml">
+    <Page Update="Views\ClientbySession.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="Views\Patients.xaml">
+    <Page Update="Views\Client.xaml">
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>

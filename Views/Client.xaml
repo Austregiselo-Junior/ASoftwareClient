@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Page
-    x:Class="ASoftware_Client.Views.Patients"
+    x:Class="ASoftware_Client.Views.Client"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -16,7 +16,7 @@
                 <ItemsStackPanel Orientation="Vertical" />
             </ItemsPanelTemplate>
 
-            <DataTemplate x:Key="PatientsDataTemplate" x:DataType="viewModel:PatientsViewModel">
+            <DataTemplate x:Key="PatientsDataTemplate" x:DataType="viewModel:ClientViewModel">
                 <RelativePanel RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True">
 
                     <TextBlock
@@ -41,21 +41,21 @@
                         x:Name="AddPatient"
                         Margin="0,0,10,0"
                         Background="Green"
-                        Click="AdicionarCliente_Click"
+                        Click="AddClient_Click"
                         Content="Adicionar Novo Paciente"
                         RelativePanel.RightOf="DateOfConsults" />
                     <Button
                         x:Name="EditPatient"
                         Margin="0,0,10,0"
                         Background="Yellow"
-                        Click="EditCliente_Click"
+                        Click="EditClient_Click"
                         Content="Editar Paciente"
                         RelativePanel.RightOf="AddPatient" />
                     <Button
                         x:Name="DeletePatient"
                         Margin="0,0,10,0"
                         Background="Red"
-                        Click="DeleteCliente_Click"
+                        Click="DeleteClient_Click"
                         Content="Excluir Paciente"
                         RelativePanel.RightOf="EditPatient" />
                 </RelativePanel>
@@ -113,7 +113,7 @@
             IsTapEnabled="False"
             ItemTemplate="{StaticResource PatientsDataTemplate}"
             ItemsPanel="{StaticResource PanelItensTemplate}"
-            ItemsSource="{x:Bind ViewModel.Patients}"
+            ItemsSource="{x:Bind ViewModel.Client}"
             ScrollViewer.HorizontalScrollBarVisibility="Auto"
             ScrollViewer.HorizontalScrollMode="Enabled" />
     </Grid>

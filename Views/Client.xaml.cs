@@ -10,25 +10,25 @@ namespace ASoftware_Client.Views
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class Patients : Page
+    public sealed partial class Client : Page
     {
-        public PatientsViewModel ViewModel => (PatientsViewModel)this.DataContext;
+        public ClientViewModel ViewModel => (ClientViewModel)this.DataContext;
 
-        public Patients()
+        public Client()
         {
             this.InitializeComponent();
-            this.DataContext = new PatientsViewModel();
+            this.DataContext = new ClientViewModel();
         }
 
-        private void AdicionarCliente_Click(object sender, RoutedEventArgs e)
+        private void AddClient_Click(object sender, RoutedEventArgs e)
         {
         }
 
-        private void EditCliente_Click(object sender, RoutedEventArgs e)
+        private void EditClient_Click(object sender, RoutedEventArgs e)
         {
         }
 
-        private void DeleteCliente_Click(object sender, RoutedEventArgs e)
+        private void DeleteClient_Click(object sender, RoutedEventArgs e)
         {
         }
     }
